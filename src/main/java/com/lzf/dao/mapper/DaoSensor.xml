@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzf.dao.IDaoSensor">
+	<insert id="insert" useGeneratedKeys="true"
+		keyProperty="sensorId">
+		insert
+		into sensor (sensorX, sensorY) values
+		(#{sensorX},#{sensorY});
+	</insert>
+
+	<update id="update">
+		update sensor set sensorX=#{sensorX},
+		sensorY=#{sensorY},
+		sensorEnergy=#{sensorEnergy} where
+		sensorId=#{sensorId}
+	</update>
+
+	<select id="select" resultType="com.lzf.entity.Sensor">
+		select * from sensor
+	</select>
+
+	<select id="selectById" resultType="com.lzf.entity.Sensor">
+		select * from sensor where
+		sensorId=#{sensorId}
+	</select>
+</mapper>

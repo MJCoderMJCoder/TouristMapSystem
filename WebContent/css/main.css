@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+/*html5*/
+article, aside, dialog, footer, header, section, nav, figure, menu, main {
+	display: block
+}
+/* 禁止用户选择网页内容 */
+body {
+	-webkit-user-select: none;
+}
+
+/* topBanner顶部横幅最左边的logo图标 */
+.img-fluid {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 50px;
+}
+
+/* 顶部标题文本居中 */
+#topBanner .text-center {
+	padding-top: 7px;
+}
+
+/* 覆盖bootstrap的row样式：去除Margin(外边距) - 清除边框外的区域，外边距是透明的。 */
+.row {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+/* 除去顶部横幅后的主界面的高度 */
+.container-fluid .row {
+	position: fixed;
+	height: 100%;
+	margin-left: -10px;
+	z-index: 0;
+}
+
+/* 选项卡导航自定义样式 */
+.nav-tabs {
+	border-bottom: 0px solid #dee2e6;
+	border-right: 1px solid #dee2e6;
+	height: 100%;
+	margin-right: 0;
+	padding-right: 0;
+}
+
+/* 选项卡导航下的每一项的自定义样式 */
+.nav-tabs .nav-item {
+	margin-bottom: 0px;
+	margin-right: -1px;
+}
+
+/*选项卡导航下的激活选定的某项的自定义样式   */
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: #495057;
+	background-color: #fff;
+	border-color: #dee2e6 #fff #dee2e6 #dee2e6;
+}
+/* 选项卡圆弧边界的自定义样式 */
+.nav-tabs .nav-link {
+	border: 1px solid transparent;
+	border-top-left-radius: .25rem;
+	border-bottom-left-radius: .25rem;
+}
+
+/* 每个菜单对应的主面板 */
+.tab-content .active {
+	display: inline;
+}
+
+/* 开始检测地图界面  */
+#canvas {
+	border: 1px solid #CCC;
+	background-image: url("../image/touristMap.jpg");
+	background-size: 100% 100%;
+	width: 100%;
+}
+
+/* 跟随鼠标进行坐标显示的提示透明背景界面 */
+#hint {
+	z-index: 1;
+}
+
+/* 跟随鼠标进行坐标显示的提示透明背景界面 */
+#canvasHint {
+	border: 1px solid #CCC;
+	background-size: 100% 100%;
+	width: 100%;
+}
+
+/* 弹出的模态框 */
+#entryScenicModal, #addSensorModal {
+	z-index: 2;
+	width: 100%;
+	position: fixed;
+	height: 100%;
+	padding: 0;
+	display: none;
+}
+
+/* 弹出的模态框背景 */
+#entryScenicModalBg, #addSensorModalBg {
+	background-color: black;
+	opacity: 0.5;
+	z-index: 3;
+	width: 100%;
+	position: fixed;
+	height: 100%;
+}
+
+/* 弹出的模态框主要内容 */
+#entryScenicModal .row, #addSensorModal .row {
+	z-index: 4;
+	padding-bottom: 20px;
+}
+
+/* 弹出的模态框主要内容 */
+#entryScenicModal .row .modal-content {
+	height: 290px;
+}
+
+/* canvas需要的指示图标 */
+#sensorBlue, #sensorGreen, #sensorYellow, #sensorRed, #userBlue, #userGreen, #userYellow, #userRed {
+	display: none;
+}
+
+/* 景区状态的顶部内容：标题和搜索 */
+#scenicState .form-inline .text-left, #scenicState .form-inline .text-right {
+	padding: 0;
+}
+
+/* 提示/警告框 */
+.alert {
+	display: none;
+}
+
+.table-responsive {
+	overflow: auto;
+	min-height: 10%;
+	max-height: 70%;
+}

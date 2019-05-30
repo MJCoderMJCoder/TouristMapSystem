@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzf.dao.IDaoUserAssociated">
+	<!-- Mybatis 配置文件 useGeneratedKeys 参数只针对 insert 语句生效，默认为 false。 当设置为 true 
+		时，表示如果插入的表以自增列为主键，则允许 JDBC 支持自动生成主键，并可将自动生成的主键返回给原对象。 其中keyProperty的值是对象的属性值不是数据库表中的字段名；这样在之后的java代码中就可以获取该主键对应的对象的属性值（userAssociatedId）。 -->
+	<insert id="insert" useGeneratedKeys="true"
+		keyProperty="userAssociatedId">
+		insert into userassociated (userselfId,
+		userRelationshipId) values (#{userselfId},#{userRelationshipId});
+	</insert>
+</mapper>

@@ -1,0 +1,257 @@
+<!--
+Bootstrap 要求使用 HTML5 文件类型，所以需要添加 HTML5 doctype 声明。
+HTML5 doctype 在文档头部声明，并设置对应编码:UTF-8
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>景区游客管理系统</title>
+<meta charset="UTF-8">
+<!--
+    为了让 Bootstrap 开发的网站对移动设备友好，确保适当的绘制和触屏缩放，需要在网页的 head 之中添加 viewport meta 标签
+    width=device-width 表示宽度是设备屏幕的宽度。
+    initial-scale=1 表示初始的缩放比例。
+    shrink-to-fit=no 自动适应手机屏幕的宽度。
+    -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- 新 Bootstrap4 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+<script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<!-- 自定义的 CSS 文件 -->
+<link rel="stylesheet" href="../css/main.css">
+<!-- 自定义的 JavaScript 文件 -->
+<script src="../js/main.js"></script>
+<!--[if lt IE 9]>
+    <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<!-- 传感器节点图片 -->
+	<img id="sensorBlue" src="../image/sensorBlue.png" class="img-fluid">
+	<img id="sensorGreen" src="../image/sensorGreen.png" class="img-fluid">
+	<img id="sensorYellow" src="../image/sensorYellow.png" class="img-fluid">
+	<img id="sensorRed" src="../image/sensorRed.png" class="img-fluid">
+	<!-- 游客节点图标 -->
+	<img id="userBlue" src="../image/userBlue.png" data-toggle="tooltip" data-placement="top" title="我是提示内容!" class="img-fluid">
+	<img id="userGreen" src="../image/userGreen.png" data-toggle="tooltip" data-placement="top" title="我是提示内容!" class="img-fluid">
+	<img id="userYellow" src="../image/userYellow.png" data-toggle="tooltip" data-placement="top" title="我是提示内容!" class="img-fluid">
+	<img id="userRed" src="../image/userRed.png" data-toggle="tooltip" data-placement="top" title="我是提示内容!" class="img-fluid">
+	<div class="container-fluid bg-info row" id="topBanner">
+		<div class="col-2 m-auto">
+			<img class="img-fluid rounded-circle" alt="景区游客管理系统" src="../image/touristMap.jpg">
+		</div>
+		<div class="col-6 text-center text-white text-nowrap">
+			<span class="font-weight-bold">景区游客管理系统</span>
+		</div>
+		<div class="col-4 text-right text-white">
+			<div class="dropdown">
+				<div class="btn dropdown-toggle" data-toggle="dropdown" id="userName">纸纷飞</div>
+				<div class="dropdown-menu dropdown-menu-right">
+					<a class="dropdown-item" href="#" id="userPhone">18334706003</a>
+					<a class="dropdown-item" href="#" id="userGender">男</a>
+					<a class="dropdown-item" href="#" id="idNo">598157378</a>
+					<a class="dropdown-item" href="#" id="userTypeName">管理员</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs col-md-1 col-sm-2 col-3 flex-column" id="leftNav" role="tablist">
+				<br />
+				<li class="nav-item" id="queryVisitorNav">
+					<a class="nav-link" data-toggle="tab" href="#queryVisitor">游客查询</a>
+				</li>
+				<li class="nav-item" id="dataAdminNav">
+					<a class="nav-link" data-toggle="tab" href="#dataAdmin">数据管理</a>
+				</li>
+				<li class="nav-item" id="scenicStateNav">
+					<a class="nav-link" data-toggle="tab" href="#scenicState">景区状态</a>
+				</li>
+				<li class="nav-item" id="startTestNav">
+					<a class="nav-link active" data-toggle="tab" href="#startTest">开始检测</a>
+				</li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content text-center col-md-11 col-sm-10 col-9">
+				<div id="queryVisitor" class="container tab-pane fade">
+					<br />
+					<div class="form-inline">
+						<h5 class="text-left text-nowrap col-4 col-sm-8">游客查询</h5>
+						<div class="input-group mb-2 col-8 col-sm-4">
+							<input type="text" class="form-control" placeholder="搜索/查询">
+							<div class="input-group-append">
+								<button class="btn btn-success" type="submit">查询</button>
+							</div>
+						</div>
+					</div>
+					<br />
+					<div class="table-responsive">
+						<table class="table table-hover table-striped table-bordered text-nowrap">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>
+										<a href="#">当前位置</a>
+									</th>
+									<th>记录时间</th>
+									<th>安全状态</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div id="dataAdmin" class="container tab-pane fade">
+					<br />
+					<h5 class="text-left text-nowrap">数据管理</h5>
+					<br />
+					<div class="table-responsive">
+						<table class="table table-hover table-striped table-bordered text-nowrap">
+							<thead>
+								<tr>
+									<th>节点编号</th>
+									<th>记录时间</th>
+									<th>节点坐标</th>
+									<th>
+										<a href="#">电量（%）</a>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+					<div class="alert alert-danger alert-dismissible fade show text-left">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong>错误! 失败的操作。</strong>
+						请点击【景区状态】菜单重试
+					</div>
+				</div>
+				<div id="scenicState" class="container tab-pane fade">
+					<br />
+					<div class="form-inline">
+						<h5 class="text-left text-nowrap col-5">景区状态</h5>
+						<span class="text-right text-nowrap col-7">加载中...</span>
+					</div>
+					<br />
+					<div class="table-responsive">
+						<table class="table table-hover table-striped table-bordered text-nowrap">
+							<thead>
+								<tr>
+									<th>景点</th>
+									<th>记录时间</th>
+									<th>当前游客人数</th>
+									<th>饱和度（%）</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+					<div class="alert alert-danger alert-dismissible fade show text-left">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong>错误! 失败的操作。</strong>
+						请点击【景区状态】菜单重试
+					</div>
+				</div>
+				<div id="startTest" class="container tab-pane active">
+					<br>
+					<canvas id="canvas">您的浏览器不支持 HTML5；请更新至最新版本。</canvas>
+					<span>加载中...</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 为canvas出提示专门提供的透明框 -->
+	<div class="container-fluid" id="hint">
+		<div class="row">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs col-md-1 col-sm-2 col-3 flex-column" id="leftNavHint" role="tablist">
+				<br />
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content text-center col-md-11 col-sm-10 col-9">
+				<div class="container tab-pane active">
+					<br>
+					<canvas id="canvasHint">您的浏览器不支持 HTML5；请更新至最新版本。</canvas>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 录入景区的模态框 -->
+	<div id="entryScenicModal" class="container-fluid">
+		<div id="entryScenicModalBg"></div>
+		<div class="row">
+			<div class="col-1 col-sm-2 col-md-3"></div>
+			<div class="modal-content m-auto col-10 col-sm-8 col-md-6">
+				<!-- 模态框头部 -->
+				<div class="modal-header">
+					<span class="modal-title">请录入您划定的该景区的其他相关信息 </span>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!-- 模态框主体 -->
+				<div class="modal-body text-center">
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">景区名称</span>
+						</div>
+						<input type="text" class="form-control" id="scenicName" placeholder="请输入景区名称" autocomplete="off">
+					</div>
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">最大人数</span>
+						</div>
+						<input type="number" class="form-control" id="maxCapacity" placeholder="等于0则视为禁区（禁止游客进入的危险区域）" step="1" autocomplete="off">
+					</div>
+					<span class="text-primary small" id="entryScenicModalHint">左上角坐标：（0,0）；右下角坐标：（100,100）</span>
+				</div>
+				<!-- 模态框底部 -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">提交</button>
+				</div>
+			</div>
+			<div class="col-1 col-sm-2 col-md-3"></div>
+		</div>
+	</div>
+
+	<!-- 是否添加传感器节点的模态框 -->
+	<div id="addSensorModal" class="container-fluid">
+		<div id="addSensorModalBg"></div>
+		<div class="row">
+			<div class="col-1 col-sm-3 col-md-4"></div>
+			<div class="modal-content m-auto col-10 col-sm-6 col-md-4">
+				<!-- 模态框头部 -->
+				<div class="modal-header">
+					<span class="modal-title">
+						是否要在此
+						<strong class="btn btn-outline-secondary">坐标位置：（0，0）</strong>
+						添加传感器节点
+					</span>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!-- 模态框底部 -->
+				<div class="modal-footer">
+					<span class="text-danger small" id="addSensorModalHint"></span>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">否</button>
+					<button type="button" class="btn  btn-dark" data-dismiss="modal">是</button>
+				</div>
+			</div>
+			<div class="col-1 col-sm-3 col-md-4"></div>
+		</div>
+	</div>
+</body>
+</html>

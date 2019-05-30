@@ -1,0 +1,75 @@
+<!--
+Bootstrap 要求使用 HTML5 文件类型，所以需要添加 HTML5 doctype 声明。
+HTML5 doctype 在文档头部声明，并设置对应编码:UTF-8
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>景区游客管理系统</title>
+<meta charset="UTF-8">
+<!--
+    为了让 Bootstrap 开发的网站对移动设备友好，确保适当的绘制和触屏缩放，需要在网页的 head 之中添加 viewport meta 标签
+    width=device-width 表示宽度是设备屏幕的宽度。
+    initial-scale=1 表示初始的缩放比例。
+    shrink-to-fit=no 自动适应手机屏幕的宽度。
+    -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- 新 Bootstrap4 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+<script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<!--自定义的CSS样式文件-->
+<link rel="stylesheet" href="./css/index.css">
+<!-- 自定义的 JavaScript 文件 -->
+<script src="./js/index.js"></script>
+<!--[if lt IE 9]>
+    <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<div class="bg-light"></div>
+	<div class="container-fluid text-center row">
+		<div class="col-sm-3 col-md-4"></div>
+		<div class="col-sm-6 col-md-4">
+			<h2 class="form-group nowrap">景区游客管理系统</h2>
+			<br />
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">账号</span>
+				</div>
+				<input type="text" class="form-control" id="idNo" placeholder="请输入身份证号" autocomplete="off">
+			</div>
+			<br />
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">密码</span>
+				</div>
+				<input type="password" class="form-control" id="userPassword" placeholder="请输入密码" autocomplete="new-password">
+			</div>
+			<span class="text-danger font-weight-bold" id="resultHint"></span>
+			<br />
+			<!-- <div id="radioGroup">
+				<div class="custom-control custom-radio custom-control-inline ">
+					<input type="radio" class="custom-control-input" id="manager"
+						value="1" name="role"> <label class="custom-control-label"
+						for="manager">管理员</label>
+				</div>
+				<div class="col-1 custom-control-inline"></div>
+				<div class="custom-control custom-radio custom-control-inline "
+					id="touristDiv">
+					<input type="radio" checked class="custom-control-input" value="3"
+						id="tourist" name="role"> <label
+						class="custom-control-label" for="tourist">游客</label>
+				</div>
+			</div> -->
+			<br />
+			<button type="submit" class="btn btn-primary col" id="login">登录</button>
+		</div>
+		<div class="col-sm-3 col-md-4"></div>
+	</div>
+</body>
+</html>

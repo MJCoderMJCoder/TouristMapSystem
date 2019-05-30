@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzf.dao.IDaoUser">
+
+	<resultMap id="userResultMap" autoMapping="true"
+		type="com.lzf.entity.User">
+		<id column="userId" jdbcType="INTEGER" property="userId" />
+		<result column="userName" jdbcType="VARCHAR"
+			property="userName" />
+		<result column="userPhone" jdbcType="VARCHAR"
+			property="userPhone" />
+		<result column="userPassword" jdbcType="VARCHAR"
+			property="userPassword" />
+		<result column="userGender" jdbcType="VARCHAR"
+			property="userGender" />
+		<result column="idNo" jdbcType="VARCHAR" property="idNo" />
+		<result column="userType" jdbcType="INTEGER"
+			property="userType" />
+		<result column="userX" jdbcType="FLOAT" property="userX" />
+		<result column="userY" jdbcType="FLOAT" property="userY" />
+		<result column="lastModifyTime" jdbcType="TIMESTAMP"
+			property="lastModifyTime" />
+		<result column="token" jdbcType="VARCHAR" property="token" />
+		<association property="userType2"
+			javaType="com.lzf.entity.UserType">
+			<id column="userTypeId" jdbcType="INTEGER" property="userTypeId" />
+			<result column="userTypeName" jdbcType="VARCHAR"
+				property="userTypeName" />
+		</association>
+		<!-- <collection property="userAssociateds" ofType="com.lzf.entity.UserAssociated"> 
+			<id property="userAssociatedId" jdbcType="INTEGER" column="userAssociatedId" 
+			/> <result column="userAssociatedName" jdbcType="VARCHAR" property="userAssociatedName" 
+			/> <result column="userselfId" jdbcType="INTEGER" property="userselfId" /> 
+			<result column="userRelationshipId" jdbcType="INTEGER" property="userRelationshipId" 
+			/> <result column="lastModifyTime" jdbcType="TIMESTAMP" property="lastModifyTime" 
+			/> </collection> -->
+	</resultMap>
+
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="login" resultMap="userResultMap">
+		select user.userId, user.userName,
+		user.userPhone, user.userPassword,
+		user.userGender, user.idNo,
+		user.userType, user.userX, user.userY,
+		user.lastModifyTime,
+		user.token,
+		usertype.userTypeId,
+		usertype.userTypeName from user join
+		usertype on
+		user.userType =
+		usertype.userTypeId
+		where user.idNo =
+		#{idNo} and
+		user.userPassword =
+		#{userPassword};
+	</select>
+
+	<select id="selectById" resultType="com.lzf.entity.User">
+		select * from user where
+		userId = #{userId}
+	</select>
+
+	<select id="selectAssociated" resultType="com.lzf.entity.User">
+		select * from user
+		where
+		userId in (select userRelationshipId from userassociated where
+		userselfId = #{userselfId})
+	</select>
+
+	<select id="select" resultType="com.lzf.entity.User">
+		select * from user where
+		userType
+		= #{userType};
+	</select>
+
+	<select id="dimSelect" resultType="com.lzf.entity.User">
+		select * from user where
+		userType = #{userType} and (userId like "%"#{userId}"%" or userName
+		like "%"#{userName}"%" or userPhone
+		like "%"#{userPhone}"%" or
+		userGender
+		like "%"#{userGender}"%" or idNo
+		like "%"#{idNo}"%" or userX
+		like "%"#{userX}"%" or userY
+		like "%"#{userY}"%" or token
+		like
+		"%"#{token}"%")
+	</select>
+
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="userId">
+		insert
+		into user (userName, userPhone, userPassword, userGender, idNo,
+		userType,
+		userX, userY, token) values (#{userName}, #{userPhone},
+		#{userPassword},
+		#{userGender}, #{idNo}, #{userType}, #{userX},
+		#{userY}, #{token})
+	</insert>
+
+	<update id="update">
+		update user set userName=#{userName},
+		userPhone=#{userPhone},
+		userPassword=#{userPassword},
+		userGender=#{userGender}, idNo=#{idNo},
+		userType=#{userType},
+		userX=#{userX}, userY=#{userY}, token=#{token}
+		where userId=#{userId}
+	</update>
+</mapper>
