@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f61c5ae6-825f-47b9-88cd-961fa0f910cf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f61c5ae6-825f-47b9-88cd-961fa0f910cf" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +155,7 @@
       <workItem from="1569140379630" duration="6000" />
       <workItem from="1570846020081" duration="116000" />
       <workItem from="1581305241528" duration="157000" />
-      <workItem from="1581320935111" duration="1133000" />
+      <workItem from="1581320935111" duration="1722000" />
     </task>
     <task id="LOCAL-00001" summary="因为润世华需求在润世华MS时进行了相应更改">
       <created>1581321461426</created>
@@ -188,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581321953296</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="https://git-lfs.github.com/">
+      <created>1581322091989</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581322091989</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
