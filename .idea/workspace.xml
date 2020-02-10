@@ -155,7 +155,7 @@
       <workItem from="1569140379630" duration="6000" />
       <workItem from="1570846020081" duration="116000" />
       <workItem from="1581305241528" duration="157000" />
-      <workItem from="1581320935111" duration="612000" />
+      <workItem from="1581320935111" duration="852000" />
     </task>
     <task id="LOCAL-00001" summary="因为润世华需求在润世华MS时进行了相应更改">
       <created>1581321461426</created>
@@ -164,7 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1581321461426</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="因为润世华需求在润世华MS时进行了相应更改">
+      <created>1581321557702</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581321557702</updated>
+    </task>
+    <task id="LOCAL-00003" summary="https://git-lfs.github.com/">
+      <created>1581321661918</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581321661918</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +199,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="因为润世华需求在润世华MS时进行了相应更改" />
-    <option name="LAST_COMMIT_MESSAGE" value="因为润世华需求在润世华MS时进行了相应更改" />
+    <MESSAGE value="https://git-lfs.github.com/" />
+    <option name="LAST_COMMIT_MESSAGE" value="https://git-lfs.github.com/" />
   </component>
 </project>
