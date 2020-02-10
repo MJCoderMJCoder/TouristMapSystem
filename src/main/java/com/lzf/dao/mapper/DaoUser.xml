@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lzf.dao.IDaoUser">
 
+
 	<resultMap id="userResultMap" autoMapping="true"
-		type="com.lzf.entity.User">
-		<id column="userId" jdbcType="INTEGER" property="userId" />
+			   type="com.lzf.entity.User">
+		<id column="userId" jdbcType="INTEGER" property="userId"/>
 		<result column="userName" jdbcType="VARCHAR"
-			property="userName" />
+				property="userName"/>
 		<result column="userPhone" jdbcType="VARCHAR"
-			property="userPhone" />
+				property="userPhone"/>
 		<result column="userPassword" jdbcType="VARCHAR"
-			property="userPassword" />
+				property="userPassword"/>
 		<result column="userGender" jdbcType="VARCHAR"
-			property="userGender" />
-		<result column="idNo" jdbcType="VARCHAR" property="idNo" />
+				property="userGender"/>
+		<result column="idNo" jdbcType="VARCHAR" property="idNo"/>
 		<result column="userType" jdbcType="INTEGER"
-			property="userType" />
-		<result column="userX" jdbcType="FLOAT" property="userX" />
-		<result column="userY" jdbcType="FLOAT" property="userY" />
+				property="userType"/>
+		<result column="userX" jdbcType="FLOAT" property="userX"/>
+		<result column="userY" jdbcType="FLOAT" property="userY"/>
 		<result column="lastModifyTime" jdbcType="TIMESTAMP"
-			property="lastModifyTime" />
-		<result column="token" jdbcType="VARCHAR" property="token" />
+				property="lastModifyTime"/>
+		<result column="token" jdbcType="VARCHAR" property="token"/>
 		<association property="userType2"
-			javaType="com.lzf.entity.UserType">
-			<id column="userTypeId" jdbcType="INTEGER" property="userTypeId" />
+					 javaType="com.lzf.entity.UserType">
+			<id column="userTypeId" jdbcType="INTEGER" property="userTypeId"/>
 			<result column="userTypeName" jdbcType="VARCHAR"
-				property="userTypeName" />
+					property="userTypeName"/>
 		</association>
-		<!-- <collection property="userAssociateds" ofType="com.lzf.entity.UserAssociated"> 
-			<id property="userAssociatedId" jdbcType="INTEGER" column="userAssociatedId" 
-			/> <result column="userAssociatedName" jdbcType="VARCHAR" property="userAssociatedName" 
-			/> <result column="userselfId" jdbcType="INTEGER" property="userselfId" /> 
-			<result column="userRelationshipId" jdbcType="INTEGER" property="userRelationshipId" 
-			/> <result column="lastModifyTime" jdbcType="TIMESTAMP" property="lastModifyTime" 
-			/> </collection> -->
+		<!-- <collection property="userAssociateds" ofType="com.lzf.entity.UserAssociated">
+            <id property="userAssociatedId" jdbcType="INTEGER" column="userAssociatedId"
+            /> <result column="userAssociatedName" jdbcType="VARCHAR" property="userAssociatedName"
+            /> <result column="userselfId" jdbcType="INTEGER" property="userselfId" />
+            <result column="userRelationshipId" jdbcType="INTEGER" property="userRelationshipId"
+            /> <result column="lastModifyTime" jdbcType="TIMESTAMP" property="lastModifyTime"
+            /> </collection> -->
 	</resultMap>
 
 	<!-- 目的：为dao接口方法提供sql语句配置 -->
